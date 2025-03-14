@@ -24,9 +24,9 @@ mongoose
 app.get("/", (req, res) => {
   res.send("Bienvenue sur mon backend !");
 });
-app.get("/", (req, res) => {
-  res.send("🚀 API Express déployée sur Vercel !");
-});
+// app.get("/", (req, res) => {
+//   res.send("🚀 API Express déployée sur Vercel !");
+// });
 // Route /users
 app.get("/users", (req, res) => {
   res.json({ message: "Liste des utilisateurs" });
