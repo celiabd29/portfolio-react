@@ -57,7 +57,6 @@ app.post("/users", async (req, res) => {
     res.status(500).json({ message: "Erreur serveur", error });
   }
 });
-console.log("MONGO_URI:", process.env.MONGO_URI); // Ajout du log
 
 // Exporter l'app pour Vercel
 export default app;
