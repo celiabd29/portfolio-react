@@ -1,0 +1,10 @@
+{
+  "name": "portfolio-react",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "dependencies": {
+    "postcss-cli": "^11.0.0"
+  }
+}
