@@ -13,11 +13,22 @@ app.use(express.json());
 app.use(cors());
 
 // Connexion à MongoDB
-mongoose
-  .connect(process.env.MONGO_URI)
+// mongoose
+//   .connect(process.env.MONGO_URI)
 
-  .then(() => console.log("✅ Connecté à MongoDB"))
-  .catch((err) => console.error("❌ Erreur de connexion à MongoDB:", err));
+//   .then(() => console.log("✅ Connecté à MongoDB"))
+//   .catch((err) => console.error("❌ Erreur de connexion à MongoDB:", err));
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("✅ Connecté à MongoDB Atlas");
+  } catch (error) {
+    console.error("❌ Erreur de connexion à MongoDB :", error);
+  }
+};
+
+connectDB();
 
 // Route de test
 app.get("/", (req, res) => {
