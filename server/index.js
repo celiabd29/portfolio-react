@@ -27,12 +27,10 @@ app.get("/", (req, res) => {
 app.get("/", (req, res) => {
   res.send("🚀 API Express déployée sur Vercel !");
 });
-
-// Lancer le serveur
-// app.listen(PORT, () => {
-//   console.log(`🚀 Serveur démarré sur http://localhost:${PORT}`);
-// });
-
+// Route /users
+app.get("/users", (req, res) => {
+  res.json({ message: "Liste des utilisateurs" });
+});
 // Route pour créer un utilisateur
 app.post("/users", async (req, res) => {
   console.log("📩 Requête reçue sur /users :", req.body); // Log de test
@@ -59,6 +57,7 @@ app.post("/users", async (req, res) => {
     res.status(500).json({ message: "Erreur serveur", error });
   }
 });
+console.log("MONGO_URI:", process.env.MONGO_URI); // Ajout du log
 
 // Exporter l'app pour Vercel
 export default app;
